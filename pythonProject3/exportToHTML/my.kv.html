@@ -1,0 +1,162 @@
+<html>
+<head>
+<title>my.kv</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #ebebeb;}
+</style>
+</head>
+<body bgcolor="#131314">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+my.kv</font>
+</center></td></tr></table>
+<pre><span class="s0">WindowManager:</span>
+    <span class="s0">MainWindow:</span>
+    <span class="s0">SecondWindow:</span>
+    <span class="s0">MenuWindow:</span>
+    <span class="s0">Monday:</span>
+    <span class="s0">Tuesday:</span>
+    <span class="s0">Wednesday:</span>
+    <span class="s0">Thursday:</span>
+    <span class="s0">Friday:</span>
+    <span class="s0">Snack1:</span>
+    <span class="s0">Snack2:</span>
+    <span class="s0">Snack3:</span>
+    <span class="s0">Snack4:</span>
+    <span class="s0">Snack5:</span>
+    <span class="s0">Lunch1:</span>
+    <span class="s0">Lunch2:</span>
+    <span class="s0">Lunch3:</span>
+    <span class="s0">Lunch4:</span>
+    <span class="s0">Lunch5:</span>
+    <span class="s0">Final:</span>
+
+
+<span class="s0">&lt;MainWindow&gt;:</span>
+    <span class="s0">name:&quot;main&quot;</span>
+    <span class="s0">canvas.before:</span>
+        <span class="s0">Rectangle:</span>
+            <span class="s0">pos: self.pos</span>
+            <span class="s0">size: self.size</span>
+
+            <span class="s0">source: &quot;final.png&quot;</span>
+
+
+
+    <span class="s0">Button:</span>
+        <span class="s0">text:&quot;SCAN QR CODE&quot;</span>
+        <span class="s0">background_color:1,1,1,1</span>
+        <span class="s0">font_color:0,0,1,1</span>
+        <span class="s0">size_hint:0.2,0.2</span>
+        <span class="s0">pos_hint:{'x':0.35,'y':0}</span>
+
+        <span class="s0">on_release:</span>
+            <span class="s0">app.qr()</span>
+            <span class="s0">app.root.current=&quot;second&quot;</span>
+
+
+
+<span class="s0">&lt;SecondWindow&gt;:</span>
+    <span class="s0">name:&quot;second&quot;</span>
+    <span class="s0">canvas.before:</span>
+        <span class="s0">Rectangle:</span>
+
+            <span class="s0">pos: self.pos</span>
+            <span class="s0">size:self.size</span>
+
+
+            <span class="s0">source: &quot;bgkd.jpg&quot;</span>
+
+
+
+
+
+
+
+    <span class="s0">AnchorLayout:</span>
+        <span class="s0">anchor_x:&quot;center&quot;</span>
+        <span class="s0">anchor_y:&quot;bottom&quot;</span>
+        <span class="s0">BoxLayout:</span>
+            <span class="s0">orientation:'vertical'</span>
+            <span class="s0">size_hint: 0.3, 0.3</span>
+
+
+            <span class="s0">Button:</span>
+                <span class="s0">text:&quot;Go Back&quot;</span>
+                <span class="s0">background_color:0.1,0.5,0.7,1</span>
+
+
+
+                <span class="s0">on_release:</span>
+                    <span class="s0">app.root.current=&quot;main&quot;</span>
+                    <span class="s0">root.manager.transition.direction=&quot;right&quot;</span>
+
+            <span class="s0">Button:</span>
+                <span class="s0">text:&quot;Go To Menu&quot;</span>
+                <span class="s0">background_color:0.1,0.5,0.7,1</span>
+
+
+
+                <span class="s0">on_release:</span>
+                    <span class="s0">app.root.current=&quot;menu&quot;</span>
+                    <span class="s0">root.manager.transition.direction=&quot;left&quot;</span>
+
+<span class="s0">&lt;MenuWindow&gt;:</span>
+    <span class="s0">name:&quot;menu&quot;</span>
+    <span class="s0">canvas.before:</span>
+        <span class="s0">Rectangle:</span>
+
+            <span class="s0">pos: self.pos</span>
+            <span class="s0">size:self.size</span>
+
+
+            <span class="s0">source: &quot;indian.jpg&quot;</span>
+
+    <span class="s0">AnchorLayout:</span>
+        <span class="s0">anchor_x:&quot;center&quot;</span>
+        <span class="s0">anchor_y:&quot;center&quot;</span>
+        <span class="s0">orientation:'horizontal'</span>
+        <span class="s0">BoxLayout:</span>
+            <span class="s0">orientation:'vertical'</span>
+            <span class="s0">size_hint:.5,.5</span>
+            <span class="s0">Button:</span>
+                <span class="s0">text:&quot;Monday&quot;</span>
+                <span class="s0">on_release:</span>
+                    <span class="s0">app.submit()</span>
+
+
+
+
+            <span class="s0">Button:</span>
+                <span class="s0">text:&quot;Tuesday&quot;</span>
+                <span class="s0">on_release:</span>
+                    <span class="s0">app.submi()</span>
+
+            <span class="s0">Button:</span>
+                <span class="s0">text:&quot;Wednesday&quot;</span>
+                <span class="s0">on_release:</span>
+                    <span class="s0">app.subm()</span>
+
+            <span class="s0">Button:</span>
+                <span class="s0">text:&quot;Thursday&quot;</span>
+                <span class="s0">on_release:</span>
+                    <span class="s0">app.sub()</span>
+
+            <span class="s0">Button:</span>
+                <span class="s0">text:&quot;Friday&quot;</span>
+                <span class="s0">on_release:</span>
+                    <span class="s0">app.su()</span>
+
+
+
+
+
+
+
+
+
+</pre>
+</body>
+</html>

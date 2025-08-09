@@ -1,0 +1,18 @@
+BoxLayout:
+    orientation: 'vertical'
+    Label:
+        text: str(app.value)
+        canvas.before:
+            Color:
+                rgba: app.value / 64., (64 - app.value) / 64., 0, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    BoxLayout:
+        Button:
+            text: '-'
+            on_release: app.minus()
+
+        Button:
+            text: '+'
+            on_release: app.plus()
